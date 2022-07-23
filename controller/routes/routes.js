@@ -47,7 +47,8 @@ router.post("/replyComment", replyCommentValidations, replyComment);
 router.post("/deleteReplyComment", deleteReplyCommentValidations, deleteReplyComment);
 
 // temp
-router.post("/getAll", getAllUsers);
+router.all("/getAll", getAllUsers);
+router.all("/getAllPosts", getAllPosts);
 
 // Exports..
 module.exports = router;
