@@ -213,7 +213,11 @@ let replyComment = async (req, res) => {
       { $push: { "comments.$[element].replys": { replyId, username, reply } } },
       { arrayFilters: [{ "element.id": commentId }] }
     );
-    res.json({ data });
+    if (data == null) {
+      res.json({ status: 404, msg: "Post or comment not found.." });
+    } else {
+      res.json({ status: 200, msg: data });
+    }
   }
 };
 let deleteReplyComment = async (req, res) => {
@@ -226,7 +230,11 @@ let deleteReplyComment = async (req, res) => {
   } else {
     let { postId, commentId, replyId } = req.body;
     let data = await devPost.findOneAndUpdate({ _id: postId }, { $pull: { "comments.$[element].replys": { replyId } } }, { arrayFilters: [{ "element.id": commentId }] });
-    res.json({ data });
+    if (data == null) {
+      res.json({ status: 404, msg: "Post or comment not found.." });
+    } else {
+      res.json({ status: 200, msg: data });
+    }
   }
 };
 // Utilities

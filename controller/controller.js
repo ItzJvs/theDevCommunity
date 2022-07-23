@@ -24,7 +24,7 @@ let userRegister = async (req, res) => {
       userStatus = userStatus ? userStatus : await devUser.findOne({ username });
       if (userStatus != null) {
         return res.json({
-          msg: "User Already exists with this email..",
+          msg: "User Already exists with this email.. or Username..",
           status: "OK",
         });
       }
