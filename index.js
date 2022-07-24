@@ -10,7 +10,7 @@ app.use(require("body-parser").json());
 app.use("/", router);
 app.use(
   cors({
-    origin: "*",  
+    origin: "http://localhost:3000",  
   })
 );
 app.listen(PORT, () => {
