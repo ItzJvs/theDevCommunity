@@ -5,11 +5,12 @@ var connect = require("./config/db");
 var cors = require("cors");
 require("dotenv").config();
 connect();
+app.use(cors());
 let PORT = process.env.PORT || 5000;
 app.use(require("body-parser").json());
 app.use("/", router);
 
-app.use(cors());
+
 app.listen(PORT, () => {
   console.log(`OhYeah changed CORS now  app listening on Port : ${PORT}`);
 });
