@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon index.js"
+    "start": "npx concurrently \"npx nodemon index.js\" \"npm run start --prefix view\" "
   },
   "keywords": [],
   "author": "",
