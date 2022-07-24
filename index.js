@@ -14,5 +14,5 @@ app.use(
   })
 );
 app.listen(PORT, () => {
-  console.log(`OhYeah app listening on Port : ${PORT}`);
+  console.log(`OhYeah changed CORS now  app listening on Port : ${PORT}`);
 });
