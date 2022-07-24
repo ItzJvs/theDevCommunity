@@ -8,16 +8,12 @@ connect();
 let PORT = process.env.PORT || 5000;
 app.use(require("body-parser").json());
 app.use("/", router);
-app.use(
+
+app.use({
   cors({
-    origin: "http://localhost:3000",  
+     origin:'*'
   })
-);
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*") 
-});
-
+  );
 app.listen(PORT, () => {
   console.log(`OhYeah changed CORS now  app listening on Port : ${PORT}`);
 });
