@@ -9,11 +9,7 @@ let PORT = process.env.PORT || 5000;
 app.use(require("body-parser").json());
 app.use("/", router);
 
-app.use(
-  cors({
-     origin:'*'
-  })
-  );
+app.use(cors());
 app.listen(PORT, () => {
   console.log(`OhYeah changed CORS now  app listening on Port : ${PORT}`);
 });
