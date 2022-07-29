@@ -52,6 +52,7 @@ let followUser = async (req, res) => {
     }
   }
 };
+//
 let unFollowUser = async (req, res) => {
   let inputStatus = validationResult(req);
   if (!inputStatus.isEmpty()) {
@@ -102,7 +103,7 @@ let unFollowUser = async (req, res) => {
     }
   }
 };
-
+//
 let createPost = async (req, res) => {
   let validationStatus = validationResult(req);
   try {
@@ -128,7 +129,7 @@ let createPost = async (req, res) => {
             title,
             blog,
             tags,
-            user: username,
+            user: userStatus,
             comments: [],
             reactions: [],
           });
@@ -148,6 +149,7 @@ let createPost = async (req, res) => {
     console.log(e);
   }
 };
+//
 let deletePost = (req, res) => {
   let postId = req?.body?.postId;
   if (postId != null) {
@@ -158,6 +160,7 @@ let deletePost = (req, res) => {
     res.json({ statusCode: 400, msg: "postId Is requied.." });
   }
 };
+//
 let commentOnPost = async (req, res) => {
   let status = validationResult(req);
   if (!status.isEmpty()) {
@@ -183,6 +186,7 @@ let commentOnPost = async (req, res) => {
     }
   }
 };
+//
 let deleteComment = async (req, res) => {
   let status = validationResult(req);
   if (!status.isEmpty()) {
@@ -197,7 +201,7 @@ let deleteComment = async (req, res) => {
     });
   }
 };
-
+//
 let replyComment = async (req, res) => {
   let status = validationResult(req);
   if (!status.isEmpty()) {
@@ -220,6 +224,7 @@ let replyComment = async (req, res) => {
     }
   }
 };
+//
 let deleteReplyComment = async (req, res) => {
   let status = validationResult(req);
   if (!status.isEmpty()) {
@@ -253,14 +258,16 @@ let deleteReplyComment = async (req, res) => {
 //  temp endpoints..
 
 let getAllUsers = async (req, res) => {
-  devUser.find({}, function (err, user) {
-    res.send(user);
+  devUser.find({}, function (err, users) {
+    if (users) res.json({ status: 200, totalUsers: users.length, users });
+    else res.json({ status: 500, msg: err });
   });
 };
 
 let getAllPosts = async (req, res) => {
-  devPost.find({}, function (err, post) {
-    res.send(post);
+  devPost.find({}, function (err, posts) {
+    if (posts) res.json({ status: 200, posts });
+    else res.json({ status: 500, msg: err });
   });
 };
 

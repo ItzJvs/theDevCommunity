@@ -6,6 +6,7 @@ let userSchema = new Schema(
   {
     name: { type: String, required },
     email: { type: String, required },
+    profileImage: { type: String },
     phone: { type: String },
     username: { type: String, required },
     password: { type: String, required },
@@ -23,7 +24,7 @@ let postsSchema = new Schema(
     title: { type: String, required },
     tags: { type: Array },
     blog: { type: String, required },
-    user: { type: String, required },
+    user: { type: userSchema, required },
     comments: { type: Array },
     reactions: { type: Array },
   },

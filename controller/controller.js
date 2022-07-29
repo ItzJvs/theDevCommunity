@@ -18,7 +18,7 @@ let userRegister = async (req, res) => {
     if (!inputStatus.isEmpty()) {
       res.json({ error: inputStatus.array() });
     } else {
-      let { name, email, address, username, password, cpassword } = req.body;
+      let { name, email, address, username, profileImage, password, cpassword } = req.body;
 
       let userStatus = await devUser.findOne({ email });
       userStatus = userStatus ? userStatus : await devUser.findOne({ username });
@@ -32,7 +32,7 @@ let userRegister = async (req, res) => {
       if (password == cpassword) {
         try {
           password = await encryptPassword(password);
-          let user = devUser.create({ name, email, address, username, password });
+          let user = devUser.create({ name, email, profileImage, address, username, password });
           let token = await createToken(user);
           res.json({
             status: res.status,

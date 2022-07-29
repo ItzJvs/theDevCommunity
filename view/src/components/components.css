@@ -1,0 +1,530 @@
+:root {
+    --primary: rgb(59, 73, 223);
+    --secondary: rgba(59, 73, 223, 0.1);
+    --body: rgb(245, 245, 245, 1);
+    --borderRadius: 0.5rem;
+    --defaultPadding: 1rem;
+    --fontSecondary: rgb(64, 64, 64);
+}
+
+b {
+    color: black;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0px 0px 2px black;
+    z-index: 1;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: 85rem;
+    align-items: center;
+
+}
+
+.nav-left {
+    margin: 0.5rem 3rem;
+    display: flex;
+    align-items: center;
+    width: 35%;
+}
+
+.nav-left .logo {
+    display: flex;
+}
+
+.nav-right {
+    background-color: white;
+    margin: 0.5rem 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+}
+
+.nav-left img {
+    height: 2.5rem;
+    background: transparent;
+}
+
+.nav-left .searchBar {
+    margin-left: 0.5rem;
+    font-size: medium;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    border: 0.1rem solid var(--fontSecondary);
+}
+
+.nav-left .searchInputLogo {
+    height: 1.5rem;
+    position: relative;
+    right: 2rem;
+}
+
+.nav-left .searchBar:focus {
+    outline: solid var(--primary) 1px;
+}
+
+.loginButton {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: medium;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.loginButton:hover,
+.LinkText:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.registerButton {
+    border: solid var(--primary) 1px;
+    color: var(--primary);
+    border-radius: 0.4rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    font-size: medium;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+}
+
+.registerButton:hover {
+    background: var(--primary);
+    color: white;
+    text-decoration: underline;
+}
+
+/* 
+*/
+
+.mainBody {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3.5rem;
+    background-color: var(--body);
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    width: 85rem;
+}
+
+/* left col part.. */
+.leftCol {
+    color: white;
+    float: left;
+    width: 20%;
+    margin: 1rem;
+}
+
+.welcomeCard {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    justify-content: center;
+    align-items: stretch;
+    border-radius: var(--borderRadius);
+    color: var(--fontSecondary);
+    font-size: 16px !important;
+    padding: var(--defaultPadding);
+    line-height: 1.5;
+}
+
+.welcomeCard * {
+    margin: 0.2rem 0rem 0.2rem 0rem;
+}
+
+.welcomeCard .welcomeDesc {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.welcomeCard .communitySpan {
+    color: var(--primary);
+}
+
+.verticalNavbar {
+    margin-top: var(--defaultPadding);
+    display: flex;
+    flex-direction: column;
+}
+
+.verticalNavbar .SocialMedias {
+    display: flex !important;
+    margin: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.verticalNavbar .SocialMedias * {
+    height: 1rem;
+    width: 1rem;
+}
+
+.verticalNavbar .SocialMedias a {
+    padding: 0.8rem;
+}
+
+.LinkText {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: medium;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.LinkText img {
+    height: 1rem;
+    margin-right: 0.5rem;
+
+}
+
+.tagsCard {
+    margin: 0.5rem;
+    height: 20rem;
+    overflow: scroll;
+}
+
+.imageCard {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    background-color: white;
+    border-radius: var(--borderRadius);
+    padding: 1rem;
+    margin: 1rem 0rem;
+}
+
+.imageCard img {
+    height: 6rem;
+    width: 100%;
+    border-radius: var(--borderRadius);
+}
+
+.imageCard .title {
+    width: 100% !important;
+    font-size: x-large;
+    color: var(--fontSecondary);
+    font-weight: bold;
+    text-align: left;
+}
+
+.imageCard .subTitle {
+    width: 100% !important;
+    font-size: medium;
+    color: var(--fontSecondary);
+    font-weight: bold;
+    text-align: left;
+    color: var(--primary);
+}
+
+/*   feed part.. */
+.feed {
+    float: left;
+    width: 45%;
+    margin: 0.5rem;
+}
+
+.feedFilters {
+    display: flex;
+    justify-content: space-between;
+    color: var(--fontSecondary);
+}
+
+.feedFilters * {
+    margin: 0.2rem 0px;
+    padding: 0.5rem;
+    border-radius: var(--borderRadius);
+    font-size: large;
+    color: var(--fontSecondary);
+}
+
+.feedFilters .timeFilters * {
+    font-size: medium !important;
+}
+
+.feedFilters .typeFilters *:hover,
+.feedFilters .timeFilters *:hover {
+    background-color: white;
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.active {
+    font-weight: bold;
+    color: black;
+}
+
+/* POst Part */
+.post {
+    background-color: white;
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+    border: solid 1px var(--body);
+    box-shadow: 0 0 1px var(--fontSecondary);
+}
+
+.post img {
+    border-radius: var(--borderRadius);
+}
+
+.post .info {
+    display: flex;
+    align-items: center;
+}
+
+.post .info img {
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+    padding: 0.3rem;
+
+}
+
+.post .info>span {
+    height: fit-content;
+    width: 100%;
+    line-height: 1rem
+}
+
+
+.post .info span .username {
+    font-size: small;
+    font-weight: bold;
+    color: var(--fontSecondary);
+    border-radius: var(--borderRadius);
+}
+
+.post .info span .username:hover {
+    background-color: var(--body);
+}
+
+.post .info span .postTime {
+    font-size: small;
+}
+
+.post .postTitle {
+    font-size: x-large;
+    margin-left: 2.5rem;
+
+    font-weight: bold;
+}
+
+.post .postTags {
+    display: flex;
+    margin-left: 2.5rem;
+}
+
+.post .postTags .LinkText {
+    font-size: smaller;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    border: solid 1px transparent;
+    box-sizing: border-box;
+}
+
+.post .postTags .LinkText:hover {
+    margin: 0.2rem;
+    padding: 0.2rem;
+    text-decoration: none;
+    border: solid 1px var(--secondary);
+    box-sizing: border-box;
+}
+
+.post .reactionsAndComments {
+    display: flex;
+    margin: 1rem 3rem;
+    justify-content: space-between;
+
+}
+
+.post .reactionsAndComments * {
+    padding: 0.5rem;
+}
+
+.post .reactionsAndComments span *:hover {
+    background-color: var(--body);
+
+}
+
+.post .reactionsAndComments .save .saveSpan {
+    background-color: lightgray;
+
+    border-radius: var(--borderRadius);
+}
+
+.post .reactionsAndComments .save .saveSpan:hover {
+    background-color: rgb(154, 152, 152);
+}
+
+/* .post  */
+
+
+
+
+
+/*  right col part */
+.rightCol {
+    background-color: green;
+    color: white;
+    float: left;
+    width: 25%;
+    margin: 1rem;
+    height: 1340px;
+}
+
+/*  */
+
+
+
+/* login component */
+.loginComponent {
+    background-color: white;
+    margin: var(--defaultPadding);
+    padding: 2rem;
+    border-radius: var(--borderRadius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+}
+
+.loginComponent .LinkText {
+    display: flex;
+    justify-content: center;
+    padding: var(--defaultPadding);
+    margin: 0.3rem;
+}
+
+.loginComponent .descLogin {
+    padding: var(--defaultPadding);
+}
+
+.loginComponent span {
+    color: black;
+    padding: .5rem;
+}
+
+.loginComponent .descLogin span {
+    color: var(--primary);
+}
+
+.loginComponent .Apple_login * {
+    margin: 0rem;
+    background-color: black !important;
+    color: white !important;
+    text-decoration: none;
+}
+
+.loginComponent .Apple_login *:hover {
+    background-color: #1b1b1b !important;
+    color: white !important;
+
+}
+
+.loginComponent .Forem_login * {
+    margin: 0rem;
+    background-color: #0a3e4a !important;
+    text-decoration: none;
+    color: white !important;
+}
+
+.loginComponent .Forem_login *:hover {
+    background-color: #05313b !important;
+    color: white !important;
+}
+
+.loginComponent .Github_login * {
+    margin: 0rem;
+    background-color: #1b1b1b !important;
+    text-decoration: none;
+    color: white !important;
+}
+
+.loginComponent .Github_login *:hover {
+    background-color: #000 !important;
+    color: white !important;
+}
+
+.loginComponent .tweeter_login * {
+    margin: 0rem;
+    background-color: #0096f2 !important;
+    text-decoration: none;
+
+    color: white !important;
+}
+
+.loginComponent .tweeter_login *:hover {
+    background-color: #1da1f2 !important;
+    color: white !important;
+}
+
+.loginComponent .loginForm {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.loginComponent .loginForm b {
+    color: var(--fontSecondary);
+}
+
+.loginComponent .loginForm input {
+    background-color: var(--secondary);
+    border: solid 1px lightgrey;
+    outline: none;
+    padding: 0.5rem;
+    border-radius: var(--borderRadius);
+    margin: 0.5rem 0rem;
+}
+
+.loginComponent span[name="sectionLink"] {
+    font-size: small;
+    color: var(--fontSecondary);
+}
+
+.loginComponent .loginForm button {
+    background-color: var(--primary);
+    border: none;
+    padding: var(--defaultPadding);
+    border-radius: var(--borderRadius);
+    color: white;
+    font-weight: bold;
+    font-size: large;
+}
+
+.loginComponent .loginForm span[name="forgot"] {
+    text-align: center;
+    color: var(--primary);
+    margin: var(--defaultPadding);
+}
