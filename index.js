@@ -11,5 +11,5 @@ app.use(cors({ origin: "*" }));
 app.use("/", router);
 
 app.listen(PORT, () => {
-  console.log(`OhYeah app listening on Port : ${PORT}`);
+  console.log(`OhYeah app listening on updated port Port : ${PORT}`);
 });
