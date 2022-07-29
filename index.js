@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var router = require("./controller/routes/routes");
-var connect = require("./config/db");
+var connect = require("./config/d1b");
 var cors = require("cors");
 require("dotenv").config();
 connect();
